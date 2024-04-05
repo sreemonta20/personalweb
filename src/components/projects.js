@@ -1093,7 +1093,7 @@ export default class Projects extends Component {
             </CardText>
             <CardActions border>
               <a
-                href="https://github.com/sreemonta20"
+                href="https://github.com/sreemonta20/personalweb"
                 target="_blank"
                 className="mdl-button mdl-js-button mdl-button--colored"
                 rel="noreferrer"
