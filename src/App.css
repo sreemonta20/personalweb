@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,226 @@
   to {
     transform: rotate(360deg);
   }
+} */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+text,
+a {
+  font-family: Lato;
+}
+
+.header-color {
+  background: -webkit-linear-gradient(to right, #5e5c7f, #5e5c7f, #833ab4);
+  background: linear-gradient(to right, #5e5c7f, #5e5c7f, #833ab4);
+}
+
+.landing-grid {
+  /* background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); */
+  background: -webkit-linear-gradient(to right, #f9f8fa, #f9f8fa, #f9f8fa);
+  background: linear-gradient(to right, #f9f8fa, #f9f8fa, #f9f8fa);
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 101%;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+}
+
+.avatar-img {
+  height: 35vh;
+  padding-top: 5em;
+}
+
+.banner-text {
+  background-color: black;
+  opacity: .75;
+  width: 75%;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.banner-text h1 {
+  font-size: 8vh;
+  font-weight: bold;
+  color: white;
+}
+
+.banner-text hr {
+  border-top: 5px dotted white;
+  width: 80%;
+  margin: auto;
+}
+
+.banner-text p {
+  color: white;
+  font-size: 3vh;
+  padding: 1em;
+}
+
+.social-links i {
+  color: white;
+  font-size: 3em;
+  padding: 8px;
+}
+
+.resume-right-col {
+  background: #27221F;
+  color: white;
+  padding: 2em;
+}
+
+.contact-body {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding-top: 2em;
+}
+
+.contact-grid {
+  text-align: center;
+  justify-content: center;
+  width: 80%;
+  height: 550px;
+  background: white;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.contact-grid p {
+  font-weight: bold;
+}
+
+.contact-grid hr {
+  border-top: 5px dotted black;
+  width: 50%;
+  margin: auto;
+}
+
+.contact-list i {
+  font-size: 9vh;
+  padding-right: 1rem;
+}
+
+/* .footer {
+  background-color: #343a40; 
+  color: #f0f0f0; 
+  padding: 1rem 2rem; 
+  text-align: center; 
+}
+
+@media screen and (max-width: 768px) {
+  .footer p {
+    font-size: 0.8rem; 
+  }
+} */
+.footer {
+  background: -webkit-linear-gradient(to right, #243a49, #243a49, #243a49);
+  background: linear-gradient(to right, #243a49, #243a49, #243a49);
+  /* background-color: #243a49; 
+  color: #243a49;  */
+  padding: 1rem 0;
+  text-align: center; 
+  
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Center content responsively */
+  width: 100%;
+  max-width: 768px; /* Limit container width on larger screens */
+  margin: 0 auto; /* Center container horizontally */
+}
+
+.company-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.company-link:hover {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .footer p { /* Responsive adjustment for smaller screens */
+    font-size: 0.8rem;
+  }
+
+  .company-link {
+    margin-top: 1rem;
+  }
+}
+
+.bold-text {
+  font-weight: bold;
+  margin-left: 5%;
+  margin-top: 0%;
+  padding-top:0%;
+}
+
+.no-top-padding {
+  white-space: pre-wrap; /* Ensures line breaks on pipe (|) */
+  margin-top: 0;
+  padding-top: 0;
+  justify-content: space-between;
+}
+
+.paragraph-container {
+  display: flex; /* Enable flexbox for columns */
+  width: 100%; /* Assuming 50% width for each column */
+}
+
+.column-container {
+  display: flex; /* Enable flexbox for content */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Align first and last items */
+  width: 50%;
+}
+
+.left-text {
+  /* Style left text (e.g., color, font-weight) */
+  text-align: left;
+}
+
+.right-text {
+  /* Style right text (e.g., color, font-weight) */
+  text-align: right;
+}
+
+.skills-pb-pt{
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.no-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+.skill-paragraph-container {
+  display: flex; /* Enable flexbox for columns */
+  width: 100%; /* Assuming 50% width for each column */
+}
+
+.skill-cat-column-container {
+  display: flex; /* Enable flexbox for content */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Align first and last items */
+  width: 18%;
+}
+
+.skill-desc-column-container {
+  display: flex; /* Enable flexbox for content */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Align first and last items */
+  width: 80%;
+  margin-left: 2%;
 }
