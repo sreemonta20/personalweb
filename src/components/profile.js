@@ -93,9 +93,9 @@ function Profile() {
             // endMonth=""
             // endYear="Continue"
             duration="Mar, 2023 – Continue"
-            companyNameAddress="Healthcare Solutions, Dubai, United Arab Emirates"
+            companyNameAddress="Dubaihealth, Dubai, United Arab Emirates"
             designation="Application Consultant"
-            jobDescription="Demonstrated leadership by taking charge of the project with no key personnel, overseeing planning, design, and development phases to ensure on-time delivery.|Successfully revived and completed a stagnant charity application project for Dubai Healthcare Authority, turning it into a successful and functional solution.|Successfully addressed payment challenges associated with the charity application project, ensuring the collection of pending payments and improving the company's financial health.|Played a key role in expanding the company's project pipeline by securing new projects, indicating a high level of client satisfaction and trust in the delivered solutions.|Established strong client relationships, resulting in additional projects from prestigious clients such as Dubai Healthcare Authority and Al Jalila Foundation, contributing to the company's expansion."
+            jobDescription="Demonstrated leadership by taking charge of the project with no key personnel, overseeing planning, design, and development phases to ensure on-time delivery.|Successfully revived and completed a stagnant charity application project for Dubai Healthcare Authority, turning it into a successful and functional solution. Also successfully deployed new developed patient charity portal t the public.|Successfully addressed payment challenges associated with the charity application project, ensuring the collection of pending payments and improving the company's financial health.|Played a key role in expanding the company's project pipeline by securing new projects, indicating a high level of client satisfaction and trust in the delivered solutions.|Established strong client relationships, resulting in additional projects from prestigious clients such as Dubai Healthcare Authority and Al Jalila Foundation, contributing to the company's expansion."
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Core 3.1, .NET Web API, SQL Server 2019, Angular 10, Angular 16, IIS 8.5, Azure Repos."
           />
@@ -165,7 +165,7 @@ function Profile() {
           />
           <Skills
             category="Frameworks"
-            skills="ASP.NET 3.5, 4.0 (Fluent), .NET 5 (Fluent), .NET 6 (Competent), WPF (Competent), Angular 6, 8, 9, 10, 11, 13, 14 (Fluent), AngularJS (Beginner), ADO.NET (Fluent), Test Driven Development (Competent), Entity Framework Core (Fluent), Express.js (Competent)"
+            skills="ASP.NET 3.5, 4.0 (Fluent), .NET Core 3.1 (Fluent), .NET 5 (Fluent), .NET 6 (Competent), WPF (Competent), Angular 6, 8, 9, 10, 11, 13, 14 (Fluent), AngularJS (Beginner), ADO.NET (Fluent), Test Driven Development (Competent), Entity Framework Core (Fluent), Express.js (Competent)"
           />
           <Skills
             category="Architectures"
@@ -173,7 +173,7 @@ function Profile() {
           />
           <Skills
             category="Databases & Storage"
-            skills="SQL Server (Fluent), PostgreSQL (Intermediate), MongoDB (Beginner), Redis Cache (Beginner)"
+            skills="SQL Server (Fluent), Cassandra & PostgreSQL (Intermediate), MongoDB (Beginner), Redis Cache (Beginner)"
           />
           <Skills
             category="Web Dev Platforms"
