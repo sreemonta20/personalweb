@@ -128,7 +128,7 @@ function Profile() {
             designation="Senior Software Engineer (Full stack development)|Junior Programmer"
             jobDescription="Led development teams in the successful launch of multiple client applications, ensuring high standards of quality and adherence to deadlines.|Strengthened client relationships through effective communication on new requirements, bug fixes, and ongoing software improvements, contributing to client retention and satisfaction.|Developed user-interactive systems that became a primary revenue driver, increasing company earnings by 50% annually.|Documented high-level designs and business processes, reducing onboarding time by 35% through improved clarity and knowledge sharing."
             toolsTechHeading="Language/Technology used: "
-            toolsTechDesc="C#, .NET Framework 3.5, 4.5, ASP.NET MVC, .NET Core, Entity Framework Core, In-Memory Cache, SQL Server 2012, Angular 8, IIS, TFS."
+            toolsTechDesc="C#, .NET Framework 3.5, 4.5, ASP.NET MVC, .NET Core, Entity Framework Core, In-Memory Cache, SQL Server 2012, Angular 8, IIS, TFS, Crystal Report"
           />
 
           <Experience
@@ -137,7 +137,7 @@ function Profile() {
             designation="Programmer|Programmer"
             jobDescription="Developed and enhanced modules for ERP web solutions in Accounting and Apparel Manufacturing, including critical report generation, contributing to a 30% increase in company revenue.|Designed and optimized database structures for new and existing applications, improving data accessibility and operational efficiency.|Spearheaded new approaches in data visualization through RDLC reporting, increasing customer retention by 15-20%.|Led knowledge-sharing sessions and mentoring activities with junior programmers, fostering team growth and accelerating project progression."
             toolsTechHeading="Language/Technology used: "
-            toolsTechDesc="C#, .NET Framework, ASP.NET MVC, SQL Server 2012, Infragistics UI,  JQuery, JavaScript, IIS, GitHub, TFS."
+            toolsTechDesc="C#, .NET Framework, ASP.NET MVC, SQL Server 2012, Infragistics UI,  JQuery, JavaScript, IIS, GitHub, TFS, RDLC, Crystal Report"
           />
 
           <Experience
