@@ -35,7 +35,7 @@ function Profile() {
           </h4>
           <hr style={{ borderTop: "3px solid #833fb2", width: "100%" }} />
           <p>
-          Experienced full-stack software developer with over 13 years in designing, developing, and implementing robust applications and solutions across diverse technologies. Skilled in translating complex requirements into efficient, scalable software and seeking to leverage this expertise in a challenging Full-Stack Software Engineer role.
+          Experienced full-stack software developer with over 12 years in designing, developing, and implementing robust applications and solutions across diverse technologies. Skilled in translating complex requirements into efficient, scalable software and seeking to leverage this expertise in a challenging Full-Stack Software Engineer role.
           </p>
           <hr style={{ borderTop: "3px solid #833fb2", width: "100%" }} />
           <h5>Address</h5>
@@ -87,19 +87,19 @@ function Profile() {
             // startYear={2023}
             // endMonth=""
             // endYear="Continue"
-            duration="Mar, 2023 – Continue"
+            duration="Apr, 2023 – Continue"
             companyNameAddress="Dubaihealth, Dubai, United Arab Emirates"
             designation="Application Consultant"
-            jobDescription="Led a critical project with minimal initial staffing, overseeing all phases from planning and design to development, ensuring on-time delivery and alignment with client goals.|Successfully revitalized a stalled charity application project for the Dubai Healthcare Authority, transforming it into a fully functional solution and launching the patient charity portal for public access.|Addressed and resolved payment-related challenges within the charity application, improving the payment collection process and contributing positively to the organization’s financial health.|Played a pivotal role in securing new projects by establishing strong client relationships, leading to additional contracts with key clients such as Dubai Healthcare Authority and Al Jalila Foundation."
+            jobDescription="Took full ownership of Charity Application development, migrating the frontend from Angular 8 to Angular 10 and optimizing the .NET backend API for better performance.|Designed, developed, and deployed a public-facing Charity Portal from scratch using .NET backend API, Ocelot API Gateway, and Angular 16, allowing patients to submit and track charity requests seamlessly.|Redesigned the commitment letter management and donation document release process, enabling faster fund approvals and reducing patient treatment delays by 40%.|Successfully integrated Non-DAHC hospitals into the system, delivering the new workflow in just 20 days.|Exceeded user expectations by 56%, allowing immediate processing of 200+ Non-DAHC charity requests, accelerating treatment initiation.|Built Windows Services for real-time donation utilization sync, shifting from monthly to 30-minute automated data synchronization with external regulatory body IACAD (Abu Dhabi), ensuring 100% accuracy in financial reporting while reducing manual efforts and errors."
             toolsTechHeading="Language/Technology used: "
-            toolsTechDesc="C#, .NET Core 3.1, .NET Web API, SQL Server 2019, Angular 10, Angular 16, IIS 8.5, Azure Repos."
+            toolsTechDesc="C#, .NET Core 3.1, .NET Web API, SQL Server 2019, Angular 10 and 16, IIS 8.5, and Azure Repos."
           />
 
           <Experience
             duration="Sep, 2022 – Feb, 2023"
             companyNameAddress="Blue Logic Digital, Dubai, United Arab Emirates"
             designation="Full-Stack Developer"
-            jobDescription="Developed high-quality applications tailored to client requirements in the insurance sector, with a focus on health and motor insurance, ensuring secure and reliable solutions.|Translated complex client requirements into robust code, delivering secure front-end and back-end solutions aligned with industry standards for insurance compliance.|Proactively took ownership of tasks from start to finish, consistently meeting deadlines and quality standards.|Integrated front-end components into back-end systems, creating seamless user experiences and ensuring optimal functionality across applications.|Produced comprehensive technical documentation, enabling streamlined handovers and efficient maintenance."
+            jobDescription="Architected and delivered insurance management platform handling 1000+ daily transactions for UAE health and motor insurance providers using .NET Core and Angular 13.|Reduced system response time by 35% through optimized database queries and frontend component lazy loading.|Implemented comprehensive logging and monitoring system, decreasing bug resolution time by 50%.|Produced comprehensive technical documentation, enabling streamlined handovers and efficient maintenance."
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Framework 4.5, 4.8, .NET Core, ASP.NET MVC, Web API, SQL Server 2016, Angular 8, Angular 13, IIS 8.5, Azure Repos."
           />
@@ -108,36 +108,54 @@ function Profile() {
             duration="Mar, 2021 – Aug, 2022"
             companyNameAddress="M2SYS Technology (A US-based offshore company), Dhaka, Bangladesh"
             designation="Senior Software Engineer"
-            jobDescription="Conducted detailed requirement analysis, design, and development of software solutions, consistently aligning deliverables with client specifications and project goals.|Elevated customer satisfaction from 75% to 95% by introducing an alternative solution for Biometric Analytics services, reducing dependency on third-party systems.|Developed and deployed two intermediary connectors for CloudApper, which enhanced data integration between client servers and internal platforms, enabling two target customers to onboard with M2SYS.|Spearheaded the development of a comprehensive Biometric API for various biometric operations, including data migration processes, significantly streamlining operations for end users.|Produced thorough API documentation, facilitating smooth integration for clients and reducing onboarding time for new technical staff."
+            jobDescription="Increased customer satisfaction from 75% to 95% by redesigning and developing an in-house Biometric Analytics service, eliminating $50K annual third-party dependency.|Developed high-performance Biometric API processing 100K+ daily transactions, reducing response time by 25%.|Built two custom CloudApper connectors enabling seamless biometric data integration, leading to successful onboarding of two major enterprise clients.|Designed automated migration toolkit for legacy biometric systems, reducing client migration time from weeks to days.|Created interactive API documentation portal, decreasing client integration time by 60% and technical support tickets by 40%."
             toolsTechHeading="Language/Technology used: "
-            toolsTechDesc="C#, .NET Framework 4.5, 4.8, .NET Core, ASP.NET MVC, Web API, SQL Server 2016, Angular 8, Angular 13, IIS 8.5, Azure Repos."
+            toolsTechDesc="C#, .NET Framework 4.5, .NET 5, Web API, SQL Server 2016, Angular 13, NGINX, Docker."
           />
 
           <Experience
             duration="Mar, 2020 – Sept, 2020"
             companyNameAddress="LeadSoft Bangladesh Limited, Dhaka, Bangladesh"
             designation="Software Architect (Full stack development)"
-            jobDescription="Collaborated closely with stakeholders to gather requirements and led the architecture, design, and development of a Pharmaceutical ERP solution, boosting departmental revenue by 40%.|Directed and motivated the development team, ensuring alignment with design standards and successfully migrating legacy ERP solutions to new technologies, enhancing system reliability and client satisfaction.|Conducted daily SCRUM meetings and weekly knowledge-sharing sessions to foster team cohesion and adherence to best practices, accelerating development cycles and improving code quality.|Successfully delivered the Production Module of the ERP on a tight timeline, contributing significantly to revenue growth and client retention."
+            jobDescription="Collaborated closely with stakeholders to gather requirements and led the architecture, design, and development of a Pharmaceutical ERP solution, boosting departmental revenue by 30%.|Directed and motivated the development team, ensuring alignment with design standards and successfully migrating legacy ERP solutions to new technologies, enhancing system reliability and client satisfaction.|Conducted daily SCRUM meetings and weekly knowledge-sharing sessions to foster team cohesion and adherence to best practices, accelerating development cycles and improving code quality.|Successfully delivered the Production Module of the ERP on a tight timeline, contributing significantly to revenue growth and client retention."
             toolsTechHeading="Language/Technology used: "
-            toolsTechDesc="C#, .NET Framework 3.5, 4.5, ASP.NET MVC, .NET Core, Entity Framework Core, In-Memory Cache, SQL Server 2016, Angular 9, Docker, Azure app service, Azure Repos, Github, TFS."
+            toolsTechDesc="C#, .NET Core, Entity Framework Core, In-Memory Cache, SQL Server 2016, Angular 9, Docker, Azure app service, Azure Repos, Github, TFS."
           />
 
           <Experience
-            duration="Oct 2015 – Feb 2020|Jun 2010 – Mar 2012"
+            duration="Oct 2015 – Feb 2020"
             companyNameAddress="Raihana Consulting (A US-based offshore company), Dhaka, Bangladesh"
-            designation="Senior Software Engineer (Full stack development)|Junior Programmer"
+            designation="Senior Software Engineer (Full stack development)"
             jobDescription="Led development teams in the successful launch of multiple client applications, ensuring high standards of quality and adherence to deadlines.|Strengthened client relationships through effective communication on new requirements, bug fixes, and ongoing software improvements, contributing to client retention and satisfaction.|Developed user-interactive systems that became a primary revenue driver, increasing company earnings by 50% annually.|Documented high-level designs and business processes, reducing onboarding time by 35% through improved clarity and knowledge sharing."
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Framework 3.5, 4.5, ASP.NET MVC, .NET Core, Entity Framework Core, In-Memory Cache, SQL Server 2012, Angular 8, IIS, TFS, Crystal Report"
           />
 
           <Experience
-            duration="Jul 2014 – Oct 2015|Apr 2012 – Jul 2012"
+            duration="Jul 2014 – Oct 2015"
             companyNameAddress="CSL Software Resources Limited, Dhaka, Bangladesh"
-            designation="Programmer|Programmer"
+            designation="Programmer"
             jobDescription="Developed and enhanced modules for ERP web solutions in Accounting and Apparel Manufacturing, including critical report generation, contributing to a 30% increase in company revenue.|Designed and optimized database structures for new and existing applications, improving data accessibility and operational efficiency.|Spearheaded new approaches in data visualization through RDLC reporting, increasing customer retention by 15-20%.|Led knowledge-sharing sessions and mentoring activities with junior programmers, fostering team growth and accelerating project progression."
             toolsTechHeading="Language/Technology used: "
-            toolsTechDesc="C#, .NET Framework, ASP.NET MVC, SQL Server 2012, Infragistics UI,  JQuery, JavaScript, IIS, GitHub, TFS, RDLC, Crystal Report"
+            toolsTechDesc="C#, .NET Framework 3.5, 4.5, ASP.NET MVC, .NET Core, Entity Framework Core, In-Memory Cache, SQL Server 2012, IIS, TFS, RDLC, Crystal Report"
+          />
+
+          <Experience
+            duration="Apr 2012 – Jul 2012"
+            companyNameAddress="CSL Software Resources Limited, Dhaka, Bangladesh"
+            designation="Programmer"
+            jobDescription="Windows-based ERP software and report development for mainly apparel industries.|A large volume of analysis reports modification and development which helped to enlarge the revenue percentage to more than 15%.|Involved immediately in effective client communication, satisfying the requirements by developing or modifying the various modules, and on-time delivery results reduced the on-board training cost by 5%.|Multi-task and change from one task to another without the loss of efficiency or composure where possessed up-to-date technical knowledge which helped to apply the best technical ideas to design the solutions for the end clients."
+            toolsTechHeading="Language/Technology used: "
+            toolsTechDesc="C#, .NET Framework, ASP.NET MVC, SQL Server 2012, Infragistics UI,  JQuery, JavaScript, IIS, GitHub, TFS, Crystal Report"
+          />
+
+          <Experience
+            duration="Jun 2010 – Mar 2012"
+            companyNameAddress="Raihana Consulting (A US-based offshore company), Dhaka, Bangladesh"
+            designation="Junior Programmer"
+            jobDescription="Participated in coding activities, maintaining the integrity of program logic and coding, developing and updating existing systems to increase task success rate by 25%, and eventually increased the annual profit to near about 15 to 20%.|Worked with senior technology solutions team members to assist with the development of over 2+ software solutions on a wide variety of platforms including web, and Desktop.|Team collaboration for Microsoft Dynamics customization using AX."
+            toolsTechHeading="Language/Technology used: "
+            toolsTechDesc="C#, .NET Framework, ASP.NET, ASP.NET MVC, SQL Server, Infragistics UI,  JQuery, JavaScript, IIS, TFS, RDLC, Crystal Report"
           />
 
           <Experience

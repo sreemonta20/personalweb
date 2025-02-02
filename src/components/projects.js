@@ -30,6 +30,122 @@ export default class Projects extends Component {
               style={{
                 color: "#fff",
                 height: "200px",
+                backgroundImage: `url('${process.env.PUBLIC_URL}/assets/images/p2_dubaihealth_publicportal.png')`,
+              }}
+            ></CardTitle>
+            <CardText>
+              <span
+                style={{
+                  color: "#000",
+                  paddingTop: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                Charity Public Portal
+              </span>
+              <br />
+              Developed a comprehensive public-facing portal for patients to submit and manage charity requests, as well as participate in surveys to improve healthcare services. The portal streamlines the application process, providing users with an intuitive interface to track their requests and offer feedback, thereby enhancing patient engagement and service delivery.
+              <br/>
+              <span
+                style={{
+                  color: "#000",
+                  paddingTop: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                Language/ Tools / Technologies : <span style={{
+                  color: "#000",
+                  paddingTop: "10px",
+                  fontWeight: "normal",
+                }}>C#, .NET Core 3.1, .NET Web API, SQL Server 2019, Angular 16, IIS 8.5, and Azure Repos.</span>
+              </span>
+            </CardText>
+            <CardActions border>
+              <a
+                href="https://github.com/sreemonta20"
+                target="_blank"
+                className="mdl-button mdl-js-button mdl-button--colored"
+                rel="noreferrer"
+              >
+                <i class="fa fa-github"></i>
+              </a>
+              <a
+                href="javascript:void(0)"
+                target="_blank"
+                className="mdl-button mdl-js-button mdl-button--colored"
+                rel="noreferrer"
+              >
+                Live
+              </a>
+            </CardActions>
+            <CardMenu style={{ color: "#fff" }}>
+              <IconButton name="share" />
+            </CardMenu>
+          </Card>
+          <p />
+          <Card shadow={12} style={{ minWidth: "50%", margin: "auto" }}>
+            <CardTitle
+              style={{
+                color: "#fff",
+                height: "200px",
+                backgroundImage: `url('${process.env.PUBLIC_URL}/assets/images/p3_bluelogic_unioninsurance.png')`,
+              }}
+            ></CardTitle>
+            <CardText>
+              <span
+                style={{
+                  color: "#000",
+                  paddingTop: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                Union Insurance
+              </span>
+              <br />
+              This is the live application, where I have worked on implementing new functionalities and revamping existing features for the motor and health insurance portals, aligned with business requirements. I have closely collaborated with stakeholders to convert business needs into technical solutions, ensuring that all features were tailored to meet specific insurance requirements. I have ensured that all updates adhered to security best practices and industry regulations for insurance solutions.
+              <br/>
+              <span
+                style={{
+                  color: "#000",
+                  paddingTop: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                Language/ Tools / Technologies : <span style={{
+                  color: "#000",
+                  paddingTop: "10px",
+                  fontWeight: "normal",
+                }}>C#, .NET Core, ASP.NET MVC, Web API, SQL Server 2016, Angular 13, IIS 8.5, Azure Repos.</span>
+              </span>
+            </CardText>
+            <CardActions border>
+              <a
+                href="https://github.com/sreemonta20"
+                target="_blank"
+                className="mdl-button mdl-js-button mdl-button--colored"
+                rel="noreferrer"
+              >
+                <i class="fa fa-github"></i>
+              </a>
+              <a
+                href="javascript:void(0)"
+                target="_blank"
+                className="mdl-button mdl-js-button mdl-button--colored"
+                rel="noreferrer"
+              >
+                Live
+              </a>
+            </CardActions>
+            <CardMenu style={{ color: "#fff" }}>
+              <IconButton name="share" />
+            </CardMenu>
+          </Card>
+          <p />
+          <Card shadow={12} style={{ minWidth: "50%", margin: "auto" }}>
+            <CardTitle
+              style={{
+                color: "#fff",
+                height: "200px",
                 backgroundImage: `url('${process.env.PUBLIC_URL}/assets/images/p_noImageAvailable.png')`,
               }}
             ></CardTitle>
