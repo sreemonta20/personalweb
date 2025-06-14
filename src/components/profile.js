@@ -92,7 +92,7 @@ function Profile() {
             designation="Application Consultant"
             jobDescription="Took full ownership of Charity Application development, migrating the frontend from Angular 8 to Angular 10 and optimizing the .NET backend API for better performance.|Designed, developed, and deployed a public-facing Charity Portal from scratch using .NET backend API, Ocelot API Gateway, and Angular 16, allowing patients to submit and track charity requests seamlessly.|Redesigned the commitment letter management and donation document release process, enabling faster fund approvals and reducing patient treatment delays by 40%.|Successfully integrated Non-DAHC hospitals into the system, delivering the new workflow in just 20 days.|Exceeded user expectations by 56%, allowing immediate processing of 200+ Non-DAHC charity requests, accelerating treatment initiation.|Built Windows Services for real-time donation utilization sync, shifting from monthly to 30-minute automated data synchronization with external regulatory body IACAD (Abu Dhabi), ensuring 100% accuracy in financial reporting while reducing manual efforts and errors."
             toolsTechHeading="Language/Technology used: "
-            toolsTechDesc="C#, .NET Core 3.1, .NET Web API, SQL Server 2019, Angular 10 and 16, IIS 8.5, and Azure Repos."
+            toolsTechDesc="C#, .NET Framework 4.5, .NET Core 3.1, .NET Web API, SQL Server 2019, Angular 10 and 16, IIS 8.5, and Azure Repos."
           />
 
           <Experience
@@ -171,7 +171,7 @@ function Profile() {
 
           <h2>Skills</h2>
 
-          <Skills
+          {/* <Skills
             category="Languages"
             skills="C# (Fluent), Typescript (Competent), VB.NET (Competent), JavaScript (Fluent), C++ (Competent)"
           />
@@ -219,6 +219,55 @@ function Profile() {
           <Skills
             category="Tools, Technologies"
             skills="VS 2008, 2010, 2015, 2019, 2022, VS Code, SQL Server 2012, 2016, 2019, Photoshop"
+          /> */}
+          <Skills
+            category="Languages"
+            skills="C#, Typescript, VB.NET, JavaScript, C++"
+          />
+          <Skills
+            category="Frameworks"
+            skills="ASP.NET, .NET Core 3.1, .NET 5, .NET 6, Angular 6, 8, 9, 10, 11, 13, 14, 16, AngularJS, ADO.NET, Test Driven Development, Entity Framework Core, Express.js"
+          />
+          <Skills
+            category="Architectures"
+            skills="ASP.NET MVC, Microservice."
+          />
+          <Skills
+            category="Databases & Storage"
+            skills="SQL Server, Cassandra & PostgreSQL, MongoDB, Redis Cache."
+          />
+          <Skills
+            category="Web Dev Platforms"
+            skills=".NET 6.0 Web API, SOAP Service, Ajax, Node.js, REST API."
+          />
+          <Skills
+            category="Libraries"
+            skills="JQuery, React.js."
+          />
+          <Skills
+            category="Reporting Tools"
+            skills="Crystal Report, RDLC, SSRS."
+          />
+          <Skills category="Framework Components" skills="LINQ " />
+          <Skills
+            category="Cloud & Containerization"
+            skills="Azure Boards and Repos, Azure App Service, Docker."
+          />
+          <Skills
+            category="System Design & Server"
+            skills="SOLID, Design Pattern, IIS."
+          />
+          <Skills
+            category="Version Controls"
+            skills="TFS, Git, Gitlab, SVN, Visual SourceSafe."
+          />
+          <Skills
+            category="Migration & Integration"
+            skills="Database, .NET Version Migration, API."
+          />
+          <Skills
+            category="Tools, Technologies"
+            skills="VS 2008, 2010, 2015, 2019, 2022, VS Code, SQL Server 2012, 2016, 2019, Photoshop."
           />
         </Cell>
       </Grid>
