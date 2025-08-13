@@ -226,7 +226,7 @@ function Profile() {
           />
           <Skills
             category="Frameworks"
-            skills="ASP.NET, .NET Core 3.1, .NET 5, .NET 6, Angular 6, 8, 9, 10, 11, 13, 14, 16, AngularJS, ADO.NET, Test Driven Development, Entity Framework Core, Express.js"
+            skills="ASP.NET, .NET Core 3.1, .NET 5 - .NET 9, Angular 8, - Angular 19, AngularJS, ADO.NET, Test Driven Development, Entity Framework Core, Express.js"
           />
           <Skills
             category="Architectures"
