@@ -1,19 +1,105 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, Cell } from "react-mdl";
 import Education from "./education";
 import Experience from "./experience";
 import Skills from "./skills";
 import profilephoto from "../profilephoto.png";
 
+// function Profile() {
+//   const cvUrl = "../assets/docs/cv_sreemonta_bhowmik.pdf";
+//   const handleDownloadClick = () => {
+//     const link = document.createElement("a");
+//     link.href = cvUrl;
+//     link.download = "cv.pdf";
+//     link.click();
+//   };
+// function Profile() {
+//   const [cvUrl, setCvUrl] = useState('../assets/docs/cv_middleeast/cv_sreemonta_bhowmik.docx'); // Default to Middle East
+
+//   useEffect(() => {
+//     fetch('https://ipapi.co/json/')
+//       .then(response => response.json())
+//       .then(data => {
+//         let folder = 'cv_southasia'; // Default
+//         const countryCode = data.country_code;
+//         const continentCode = data.continent_code;
+
+//         if (['AE', 'SA', 'BH', 'OM', 'QA', 'KW'].includes(countryCode)) {
+//           folder = 'cv_middleeast';
+//         } else if (['BD', 'IN'].includes(countryCode)) {
+//           folder = 'cv_southasia';
+//         } else if (countryCode === 'MY') {
+//           folder = 'cv_southeastasia';
+//         } else if (['AU', 'NZ'].includes(countryCode)) {
+//           folder = 'cv_oceania';
+//         } else if (countryCode === 'CA') {
+//           folder = 'cv_northamerica';
+//         } else if (continentCode === 'EU') {
+//           folder = 'cv_europe';
+//         }
+
+//         setCvUrl(`../assets/docs/${folder}/cv_sreemonta_bhowmik.docx`);
+//       })
+//       .catch(error => {
+//         console.error('Error fetching geolocation:', error);
+//         // Keep the default URL on error
+//       });
+//   }, []);
+
+//   const handleDownloadClick = () => {
+//     const link = document.createElement("a");
+//     link.href = cvUrl;
+//     link.download = "cv.docx";
+//     link.click();
+//   };
 function Profile() {
-  const cvUrl = "../assets/docs/cv_sreemonta_bhowmik.pdf";
-  // const cvUrl = `'${process.env.PUBLIC_URL}/assets/docs/cloudabis_portal.png'`;
+  const [cvUrl, setCvUrl] = useState(''); // Initial empty to prevent early clicks
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        let folder = 'cv_southasia'; // Default
+        const countryCode = data.country_code;
+        const continentCode = data.continent_code;
+
+        if (['AE', 'SA', 'BH', 'OM', 'QA', 'KW'].includes(countryCode)) {
+          folder = 'cv_middleeast';
+        } else if (['BD', 'IN'].includes(countryCode)) {
+          folder = 'cv_southasia';
+        } else if (countryCode === 'MY') {
+          folder = 'cv_southeastasia';
+        } else if (['AU', 'NZ'].includes(countryCode)) {
+          folder = 'cv_oceania';
+        } else if (countryCode === 'CA') {
+          folder = 'cv_northamerica';
+        } else if (continentCode === 'EU') {
+          folder = 'cv_europe';
+        }else{
+          folder = 'default';
+        }
+
+        setCvUrl(`/assets/docs/${folder}/cv_sreemonta_bhowmik.docx`);
+        setIsLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching geolocation:', error);
+        setCvUrl(`/assets/docs/cv_southasia/cv_sreemonta_bhowmik.docx`); // Fallback to South Asia
+        setIsLoading(false);
+      });
+  }, []);
+
   const handleDownloadClick = () => {
+    if (isLoading || !cvUrl) {
+      alert('Location detection in progress. Please try again in a moment.');
+      return;
+    }
     const link = document.createElement("a");
     link.href = cvUrl;
-    link.download = "cv.pdf";
+    link.download = "cv.docx";
     link.click();
   };
   return (
@@ -39,9 +125,9 @@ function Profile() {
           </p>
           <hr style={{ borderTop: "3px solid #833fb2", width: "100%" }} />
           <h5>Address</h5>
-          <p>Al Nahada 2, Dubai, United Arab Emirates</p>
+          <p>Al Nahada, Sharjah, United Arab Emirates</p>
           <h5>Phone</h5>
-          <p>(+971) 568598068</p>
+          <p>(+971) 505518307</p>
           <h5>Email</h5>
           <p>
             <a href="mailto:sreemonta.bhowmik@gmail.com">
@@ -88,7 +174,7 @@ function Profile() {
             // endMonth=""
             // endYear="Continue"
             duration="Apr, 2023 – Continue"
-            companyNameAddress="Dubaihealth, Dubai, United Arab Emirates"
+            companyNameAddress="Healthcare Solutions (Deployed at Dubaihealth), Dubai, United Arab Emirates"
             designation="Application Consultant"
             jobDescription="Took full ownership of Charity Application development, migrating the frontend from Angular 8 to Angular 10 and optimizing the .NET backend API for better performance.|Designed, developed, and deployed a public-facing Charity Portal from scratch using .NET backend API, Ocelot API Gateway, and Angular 16, allowing patients to submit and track charity requests seamlessly.|Redesigned the commitment letter management and donation document release process, enabling faster fund approvals and reducing patient treatment delays by 40%.|Successfully integrated Non-DAHC hospitals into the system, delivering the new workflow in just 20 days.|Exceeded user expectations by 56%, allowing immediate processing of 200+ Non-DAHC charity requests, accelerating treatment initiation.|Built Windows Services for real-time donation utilization sync, shifting from monthly to 30-minute automated data synchronization with external regulatory body IACAD (Abu Dhabi), ensuring 100% accuracy in financial reporting while reducing manual efforts and errors."
             toolsTechHeading="Language/Technology used: "
@@ -126,7 +212,8 @@ function Profile() {
             duration="Oct 2015 – Feb 2020"
             companyNameAddress="Raihana Consulting (A US-based offshore company), Dhaka, Bangladesh"
             designation="Senior Software Engineer (Full stack development)"
-            jobDescription="Led development teams in the successful launch of multiple client applications, ensuring high standards of quality and adherence to deadlines.|Strengthened client relationships through effective communication on new requirements, bug fixes, and ongoing software improvements, contributing to client retention and satisfaction.|Developed user-interactive systems that became a primary revenue driver, increasing company earnings by 50% annually.|Documented high-level designs and business processes, reducing onboarding time by 35% through improved clarity and knowledge sharing."
+            jobDescription="Led application development teams delivering 15+ software solutions across web and desktop platforms for US and local clients, increasing company revenue by 50% annually and improving task success rates by 25%|Collaborated with distributed US-Bangladesh teams on Microsoft Dynamics AX customizations and enterprise applications, managing client communications for requirements gathering and issue resolution.|Developed comprehensive documentation and conducted technical training sessions, reducing client onboarding time by 35% while mentoring junior developers and ensuring quality standards."
+            // jobDescription="Led development teams in the successful launch of multiple client applications, ensuring high standards of quality and adherence to deadlines.|Strengthened client relationships through effective communication on new requirements, bug fixes, and ongoing software improvements, contributing to client retention and satisfaction.|Developed user-interactive systems that became a primary revenue driver, increasing company earnings by 50% annually.|Documented high-level designs and business processes, reducing onboarding time by 35% through improved clarity and knowledge sharing."
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Framework 3.5, 4.5, ASP.NET MVC, .NET Core, Entity Framework Core, In-Memory Cache, SQL Server 2012, Angular 8, IIS, TFS, Crystal Report"
           />

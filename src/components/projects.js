@@ -44,7 +44,7 @@ export default class Projects extends Component {
                 Charity Public Portal
               </span>
               <br />
-              Developed a comprehensive public-facing portal for patients to submit and manage charity requests, as well as participate in surveys to improve healthcare services. The portal streamlines the application process, providing users with an intuitive interface to track their requests and offer feedback, thereby enhancing patient engagement and service delivery.
+              Developed a comprehensive public-facing portal for patients to submit and manage charity requests, as well as participate in surveys to improve healthcare services. The portal streamlines the application process, providing users with an intuitive interface to track their requests and offer feedback, thereby enhancing patient engagement and service delivery. Implemented secure authentication and identity management by integrating UAE Pass and IDAM API, ensuring trusted access and compliance with national identity standards.
               <br/>
               <span
                 style={{
@@ -70,7 +70,65 @@ export default class Projects extends Component {
                 <i class="fa fa-github"></i>
               </a>
               <a
-                href="javascript:void(0)"
+                href="https://services.dubaihealth.ae/financialaidtreatment/"
+                target="_blank"
+                className="mdl-button mdl-js-button mdl-button--colored"
+                rel="noreferrer"
+              >
+                Live
+              </a>
+            </CardActions>
+            <CardMenu style={{ color: "#fff" }}>
+              <IconButton name="share" />
+            </CardMenu>
+          </Card>
+          <p />
+          <Card shadow={12} style={{ minWidth: "50%", margin: "auto" }}>
+            <CardTitle
+              style={{
+                color: "#fff",
+                height: "74px",
+                backgroundImage: `url('${process.env.PUBLIC_URL}/assets/images/p1_dubaihealth_charityapp.png')`,
+              }}
+            ></CardTitle>
+            <CardText>
+              <span
+                style={{
+                  color: "#000",
+                  paddingTop: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                Charity Application
+              </span>
+              <br />
+              Charity Application is complete web solution for creating different types of charity requests (DAHC, NON-DAHC and DAHC commitment letter) and passes through creating the donation letter or commitment letter, different approval level processes for getting the patient treatment done. Also, It allows to sync with different systems to receive the donation from the donors (fund receipt), patient treatment expenditure (utilization), etc. It exposes varioud RDL reports which are extensively used by the users. This application is built to to be used by the internal users
+              <br/>
+              <span
+                style={{
+                  color: "#000",
+                  paddingTop: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                Language/ Tools / Technologies : <span style={{
+                  color: "#000",
+                  paddingTop: "10px",
+                  fontWeight: "normal",
+                }}>C#, .NET Core 3.1, .NET Web API, SQL Server 2019, Angular 10, IIS 8.5, and Azure Repos.</span>
+              </span>
+            </CardText>
+            <CardActions border>
+              <a
+                href="https://github.com/sreemonta20"
+                target="_blank"
+                className="mdl-button mdl-js-button mdl-button--colored"
+                rel="noreferrer"
+              >
+                <i class="fa fa-github"></i>
+              </a>
+              <a
+                href="https://services.dubaihealth.ae/financialaidtreatment/"
                 target="_blank"
                 className="mdl-button mdl-js-button mdl-button--colored"
                 rel="noreferrer"

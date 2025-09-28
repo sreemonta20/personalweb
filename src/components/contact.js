@@ -26,7 +26,7 @@ function Contact() {
                 <ListItemContent
                   style={{ fontSize: "3vh", fontFamily: "Lato" }}
                 >
-                  <i className="fa fa-phone-square" aria-hidden="true" />(+971)568598068
+                  <i className="fa fa-phone-square" aria-hidden="true" />(+971)505518307
                 </ListItemContent>
               </ListItem>
 
