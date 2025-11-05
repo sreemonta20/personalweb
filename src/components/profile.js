@@ -82,12 +82,22 @@ function Profile() {
           folder = 'default';
         }
 
-        setCvUrl(`/assets/docs/${folder}/cv_sreemonta_bhowmik.docx`);
+        const isCV =
+          folder === "cv_middleeast" ||
+          folder === "cv_southasia" ||
+          folder === "cv_southeastasia" ||
+          folder === "default";
+
+        const fileName = isCV
+          ? "CV_Sreemonta_Bhowmik.pdf"
+          : "Resume_Sreemonta_Bhowmik.pdf";
+
+        setCvUrl(`/assets/docs/${folder}/${fileName}`);
         setIsLoading(false);
       })
       .catch(error => {
         console.error('Error fetching geolocation:', error);
-        setCvUrl(`/assets/docs/cv_southasia/cv_sreemonta_bhowmik.docx`); // Fallback to South Asia
+        setCvUrl(`/assets/docs/cv_southasia/CV_Sreemonta_Bhowmik.pdf`); // Fallback to South Asia
         setIsLoading(false);
       });
   }, []);
@@ -99,7 +109,7 @@ function Profile() {
     }
     const link = document.createElement("a");
     link.href = cvUrl;
-    link.download = "cv.docx";
+    link.download = cvUrl.includes("CV_") ? "CV_Sreemonta_Bhowmik.pdf" : "Resume_Sreemonta_Bhowmik.pdf";
     link.click();
   };
   return (
@@ -115,7 +125,7 @@ function Profile() {
             Application Consultant{" "}
             <span style={{ fontSize: "small" }}>
               <a href="javascript:void(0)" onClick={handleDownloadClick}>
-                CV
+                CV/Resume
               </a>
             </span>
           </h4>
@@ -178,7 +188,7 @@ function Profile() {
             designation="Application Consultant"
             jobDescription="Took full ownership of Charity Application development, migrating the frontend from Angular 8 to Angular 10 and optimizing the .NET backend API for better performance.|Designed, developed, and deployed a public-facing Charity Portal from scratch using .NET backend API, Ocelot API Gateway, and Angular 16, allowing patients to submit and track charity requests seamlessly.|Redesigned the commitment letter management and donation document release process, enabling faster fund approvals and reducing patient treatment delays by 40%.|Successfully integrated Non-DAHC hospitals into the system, delivering the new workflow in just 20 days.|Exceeded user expectations by 56%, allowing immediate processing of 200+ Non-DAHC charity requests, accelerating treatment initiation.|Built Windows Services for real-time donation utilization sync, shifting from monthly to 30-minute automated data synchronization with external regulatory body IACAD (Abu Dhabi), ensuring 100% accuracy in financial reporting while reducing manual efforts and errors."
             toolsTechHeading="Language/Technology used: "
-            toolsTechDesc="C#, .NET Framework 4.5, .NET Core 3.1, .NET Web API, SQL Server 2019, Angular 10 and 16, IIS 8.5, and Azure Repos."
+            toolsTechDesc="C#, .NET Framework 4.5, .NET Core 3.1, .NET Web API, SQL Server 2019, Angular 10 and 16, IIS 8.5, and Azure Repos, Ocelot API Gateway, RDLC Reports, Docker."
           />
 
           <Experience
@@ -196,7 +206,7 @@ function Profile() {
             designation="Senior Software Engineer"
             jobDescription="Increased customer satisfaction from 75% to 95% by redesigning and developing an in-house Biometric Analytics service, eliminating $50K annual third-party dependency.|Developed high-performance Biometric API processing 100K+ daily transactions, reducing response time by 25%.|Built two custom CloudApper connectors enabling seamless biometric data integration, leading to successful onboarding of two major enterprise clients.|Designed automated migration toolkit for legacy biometric systems, reducing client migration time from weeks to days.|Created interactive API documentation portal, decreasing client integration time by 60% and technical support tickets by 40%."
             toolsTechHeading="Language/Technology used: "
-            toolsTechDesc="C#, .NET Framework 4.5, .NET 5, Web API, SQL Server 2016, Angular 13, NGINX, Docker."
+            toolsTechDesc="C#, .NET Framework 4.5, .NET 5, Ocelot API Gateway, Web API, SQL Server 2016, Angular JS, Angular 13, NGINX, Docker."
           />
 
           <Experience
@@ -309,52 +319,48 @@ function Profile() {
           /> */}
           <Skills
             category="Languages"
-            skills="C#, Typescript, VB.NET, JavaScript, C++"
+            skills="C#, TypeScript, JavaScript, VB.NET (legacy support)"
           />
           <Skills
             category="Frameworks"
-            skills="ASP.NET, .NET Core 3.1, .NET 5 - .NET 9, Angular 8, - Angular 19, AngularJS, ADO.NET, Test Driven Development, Entity Framework Core, Express.js"
+            skills=".NET 6–9, ASP.NET Core, MVC, Entity Framework Core, LINQ, TDD"
           />
           <Skills
-            category="Architectures"
-            skills="ASP.NET MVC, Microservice."
+            category="Frontend"
+            skills="Angular (8–16), jQuery, React.js (working knowledge)"
           />
           <Skills
-            category="Databases & Storage"
-            skills="SQL Server, Cassandra & PostgreSQL, MongoDB, Redis Cache."
+            category="Architecture & Patterns"
+            skills="Microservices, REST APIs, API Gateway (Ocelot), SOLID, Design Patterns"
           />
           <Skills
-            category="Web Dev Platforms"
-            skills=".NET 6.0 Web API, SOAP Service, Ajax, Node.js, REST API."
+            category="Databases"
+            skills="SQL Server, PostgreSQL, MongoDB, Redis Cache"
           />
           <Skills
-            category="Libraries"
-            skills="JQuery, React.js."
+            category="Cloud & DevOps"
+            skills="Azure App Service, Azure DevOps, Docker, IIS"
           />
           <Skills
-            category="Reporting Tools"
-            skills="Crystal Report, RDLC, SSRS."
+            category="Integrations & Security"
+            skills="External APIs, UAE Pass, IDAM, OAuth2/OIDC, JWT, SSO"
           />
-          <Skills category="Framework Components" skills="LINQ " />
+          
           <Skills
-            category="Cloud & Containerization"
-            skills="Azure Boards and Repos, Azure App Service, Docker."
-          />
-          <Skills
-            category="System Design & Server"
-            skills="SOLID, Design Pattern, IIS."
+            category="Reporting"
+            skills="Crystal Reports, RDLC, SSRS"
           />
           <Skills
-            category="Version Controls"
-            skills="TFS, Git, Gitlab, SVN, Visual SourceSafe."
+            category="Project Management & Version Control"
+            skills="Jira, Git, GitHub, GitLab"
           />
           <Skills
-            category="Migration & Integration"
-            skills="Database, .NET Version Migration, API."
+            category="Migration"
+            skills=".NET Version & Database Migration"
           />
           <Skills
-            category="Tools, Technologies"
-            skills="VS 2008, 2010, 2015, 2019, 2022, VS Code, SQL Server 2012, 2016, 2019, Photoshop."
+            category="Certifications"
+            skills="Microsoft Azure Fundamentals (AZ-900) – In Progress"
           />
         </Cell>
       </Grid>
