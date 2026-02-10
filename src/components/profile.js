@@ -6,54 +6,8 @@ import Education from "./education";
 import Experience from "./experience";
 import Skills from "./skills";
 import profilephoto from "../profilephoto.png";
+import Courses from "./courses";
 
-// function Profile() {
-//   const cvUrl = "../assets/docs/cv_sreemonta_bhowmik.pdf";
-//   const handleDownloadClick = () => {
-//     const link = document.createElement("a");
-//     link.href = cvUrl;
-//     link.download = "cv.pdf";
-//     link.click();
-//   };
-// function Profile() {
-//   const [cvUrl, setCvUrl] = useState('../assets/docs/cv_middleeast/cv_sreemonta_bhowmik.docx'); // Default to Middle East
-
-//   useEffect(() => {
-//     fetch('https://ipapi.co/json/')
-//       .then(response => response.json())
-//       .then(data => {
-//         let folder = 'cv_southasia'; // Default
-//         const countryCode = data.country_code;
-//         const continentCode = data.continent_code;
-
-//         if (['AE', 'SA', 'BH', 'OM', 'QA', 'KW'].includes(countryCode)) {
-//           folder = 'cv_middleeast';
-//         } else if (['BD', 'IN'].includes(countryCode)) {
-//           folder = 'cv_southasia';
-//         } else if (countryCode === 'MY') {
-//           folder = 'cv_southeastasia';
-//         } else if (['AU', 'NZ'].includes(countryCode)) {
-//           folder = 'cv_oceania';
-//         } else if (countryCode === 'CA') {
-//           folder = 'cv_northamerica';
-//         } else if (continentCode === 'EU') {
-//           folder = 'cv_europe';
-//         }
-
-//         setCvUrl(`../assets/docs/${folder}/cv_sreemonta_bhowmik.docx`);
-//       })
-//       .catch(error => {
-//         console.error('Error fetching geolocation:', error);
-//         // Keep the default URL on error
-//       });
-//   }, []);
-
-//   const handleDownloadClick = () => {
-//     const link = document.createElement("a");
-//     link.href = cvUrl;
-//     link.download = "cv.docx";
-//     link.click();
-//   };
 function Profile() {
   const [cvUrl, setCvUrl] = useState(''); // Initial empty to prevent early clicks
   const [isLoading, setIsLoading] = useState(true);
@@ -112,6 +66,14 @@ function Profile() {
     link.download = cvUrl.includes("CV_") ? "CV_Sreemonta_Bhowmik.pdf" : "Resume_Sreemonta_Bhowmik.pdf";
     link.click();
   };
+
+  const certificateDownload = (fileName) => {
+  const link = document.createElement("a");
+  // This points to your public/docs/certificate/ folder
+  link.href = `/assets/docs/certificate/${fileName}`;
+  link.download = fileName; 
+  link.click();
+};
   return (
     <div>
       <Grid>
@@ -135,7 +97,7 @@ function Profile() {
           </p>
           <hr style={{ borderTop: "3px solid #833fb2", width: "100%" }} />
           <h5>Address</h5>
-          <p>Al Nahada, Sharjah, United Arab Emirates</p>
+          <p>Al Nahada, Sharjah (Dubai-Sharjah border), United Arab Emirates</p>
           <h5>Phone</h5>
           <p>(+971) 505518307</p>
           <h5>Email</h5>
@@ -183,7 +145,7 @@ function Profile() {
             // startYear={2023}
             // endMonth=""
             // endYear="Continue"
-            duration="Apr, 2023 – Continue"
+            duration="Apr, 2023 – Nov, 2025"
             companyNameAddress="Healthcare Solutions (Deployed at Dubaihealth), Dubai, United Arab Emirates"
             designation="Application Consultant"
             jobDescription="Took full ownership of Charity Application development, migrating the frontend from Angular 8 to Angular 10 and optimizing the .NET backend API for better performance.|Designed, developed, and deployed a public-facing Charity Portal from scratch using .NET backend API, Ocelot API Gateway, and Angular 16, allowing patients to submit and track charity requests seamlessly.|Redesigned the commitment letter management and donation document release process, enabling faster fund approvals and reducing patient treatment delays by 40%.|Successfully integrated Non-DAHC hospitals into the system, delivering the new workflow in just 20 days.|Exceeded user expectations by 56%, allowing immediate processing of 200+ Non-DAHC charity requests, accelerating treatment initiation.|Built Windows Services for real-time donation utilization sync, shifting from monthly to 30-minute automated data synchronization with external regulatory body IACAD (Abu Dhabi), ensuring 100% accuracy in financial reporting while reducing manual efforts and errors."
@@ -268,55 +230,6 @@ function Profile() {
 
           <h2>Skills</h2>
 
-          {/* <Skills
-            category="Languages"
-            skills="C# (Fluent), Typescript (Competent), VB.NET (Competent), JavaScript (Fluent), C++ (Competent)"
-          />
-          <Skills
-            category="Frameworks"
-            skills="ASP.NET 3.5, 4.0 (Fluent), .NET Core 3.1 (Fluent), .NET 5 (Fluent), .NET 6 (Competent), WPF (Competent), Angular 6, 8, 9, 10, 11, 13, 14 (Fluent), AngularJS (Beginner), ADO.NET (Fluent), Test Driven Development (Competent), Entity Framework Core (Fluent), Express.js (Competent)"
-          />
-          <Skills
-            category="Architectures"
-            skills="ASP.NET MVC (Fluent), Microservice (Competent)"
-          />
-          <Skills
-            category="Databases & Storage"
-            skills="SQL Server (Fluent), Cassandra & PostgreSQL (Intermediate), MongoDB (Beginner), Redis Cache (Beginner)"
-          />
-          <Skills
-            category="Web Dev Platforms"
-            skills=".NET 6.0 Web API (Fluent), SOAP Service (Competent), Ajax (Fluent), Node.js (Competent), REST API(Fluent)."
-          />
-          <Skills
-            category="Libraries"
-            skills="JQuery (Fluent), React.js (Beginner)"
-          />
-          <Skills
-            category="Reporting Tools"
-            skills="Crystal Report (Fluent), RDLC (Fluent), SSRS (Competent)"
-          />
-          <Skills category="Framework Components" skills="LINQ " />
-          <Skills
-            category="Cloud & Containerization"
-            skills="Azure Boards and Repos (Beginner), Azure App Service (Beginner), Docker (Intermediate)."
-          />
-          <Skills
-            category="System Design & Server"
-            skills="SOLID (Competent), Design Pattern (Intermediate), IIS (Competent)"
-          />
-          <Skills
-            category="Version Controls"
-            skills="TFS, Git, Gitlab, SVN, Visual SourceSafe. (Competent)"
-          />
-          <Skills
-            category="Migration & Integration"
-            skills="Database (Competent), .NET Version Migration (Competent), API (Fluent)"
-          />
-          <Skills
-            category="Tools, Technologies"
-            skills="VS 2008, 2010, 2015, 2019, 2022, VS Code, SQL Server 2012, 2016, 2019, Photoshop"
-          /> */}
           <Skills
             category="Languages"
             skills="C#, TypeScript, JavaScript, VB.NET (legacy support)"
@@ -358,9 +271,60 @@ function Profile() {
             category="Migration"
             skills=".NET Version & Database Migration"
           />
-          <Skills
-            category="Certifications"
-            skills="Microsoft Azure Fundamentals (AZ-900) – In Progress"
+
+          <hr style={{ borderTop: "3px solid #e22947" }} />
+
+          <h2>Certifications, Courses & Training</h2>
+
+          <Courses
+            category="Microsoft Certification"
+            courses="Microsoft Azure Fundamentals (AZ-900) - In Progress"
+          />
+          <Courses
+            category="Coursera-Google Certification"
+            courses={
+                      <>
+                        Google Prompting Essentials - Start Writing Prompts like a Pro - 
+                        <span 
+                          onClick={() => certificateDownload("writeprompt.pdf")} 
+                          style={{ color: "#e22947", cursor: "pointer", textDecoration: "underline", marginLeft: "5px" }}
+                        >
+                          Completed
+                        </span>
+                      </>
+                    }
+          />
+          <Courses
+            category="Coursera-Google Certification"
+            courses="Google Prompting Essentials - Design Prompts for Everyday Work Tasks - In Progress"
+          />
+          <Courses
+            category="Coursera-Google Certification"
+            courses="Google Prompting Essentials - Speed Up Data Analysis and Presentation Building - In Progress"
+          />
+          <Courses
+            category="Coursera-Google Certification"
+            courses="Google Prompting Essentials - Use AI as a Creative or Expert Partner - In Progress"
+          />
+          <Courses
+            category="Training"
+            courses="In-house ERP System Training and Implementation — Hop Lun, China (Jan 2016) - Completed"
+          />
+          <Courses
+            category="Workshop"
+            courses="Workshop on Software Design and Architecture — Nerd Castle Limited, Dhaka, Bangladesh (Feb 2017 – Mar 2017) - Completed"
+          />
+          <Courses
+            category="Training"
+            courses="Training on Object Oriented Programming (OOP) – ASP.NET (C#) — BASIS/BITM, Dhaka, Bangladesh (Nov 2009 – Feb 2010) - Completed"
+          />
+          <Courses
+            category="Industrial Training"
+            courses="Linux OS, 3-tier Java web app, Eclipse, IBM WebSphere, MySQL, Unit Testing — DPS Technologies India Pvt. Ltd., West Bengal, India (Jun 2007 – Jul 2007) - Completed"
+          />
+          <Courses
+            category="Training"
+            courses="Red Hat Certified Technician (Linux) Training — Micro-Pro, West Bengal, India (Jun 2006 – Jul 2006) - Completed"
           />
         </Cell>
       </Grid>
