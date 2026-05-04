@@ -9,33 +9,33 @@ import profilephoto from "../profilephoto.png";
 import Courses from "./courses";
 
 function Profile() {
-  const [cvUrl, setCvUrl] = useState(''); // Initial empty to prevent early clicks
+  const [cvUrl, setCvUrl] = useState(""); // Initial empty to prevent early clicks
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://ipapi.co/json/')
-      .then(response => response.json())
-      .then(data => {
-        let folder = 'cv_southasia'; // Default
+    fetch("https://ipapi.co/json/")
+      .then((response) => response.json())
+      .then((data) => {
+        let folder = "cv_southasia"; // Default
         const countryCode = data.country_code;
         const continentCode = data.continent_code;
-
-        if (['AE', 'SA', 'BH', 'OM', 'QA', 'KW'].includes(countryCode)) {
-          folder = 'cv_middleeast';
-        } else if (['BD', 'IN'].includes(countryCode)) {
-          folder = 'cv_southasia';
-        } else if (countryCode === 'MY') {
-          folder = 'cv_southeastasia';
-        } else if (['AU', 'NZ'].includes(countryCode)) {
-          folder = 'cv_oceania';
-        } else if (countryCode === 'CA') {
-          folder = 'cv_northamerica';
-        } else if (continentCode === 'EU') {
-          folder = 'cv_europe';
-        }else{
-          folder = 'default';
+        debugger;
+        if (["AE", "SA", "BH", "OM", "QA", "KW"].includes(countryCode)) {
+          folder = "cv_middleeast";
+        } else if (["BD", "IN"].includes(countryCode)) {
+          folder = "cv_southasia";
+        } else if (countryCode === "MY") {
+          folder = "cv_southeastasia";
+        } else if (["AU", "NZ"].includes(countryCode)) {
+          folder = "cv_oceania";
+        } else if (countryCode === "CA") {
+          folder = "cv_northamerica";
+        } else if (continentCode === "EU") {
+          folder = "cv_europe";
+        } else {
+          folder = "default";
         }
-
+        debugger;
         const isCV =
           folder === "cv_middleeast" ||
           folder === "cv_southasia" ||
@@ -49,76 +49,148 @@ function Profile() {
         setCvUrl(`/assets/docs/${folder}/${fileName}`);
         setIsLoading(false);
       })
-      .catch(error => {
-        console.error('Error fetching geolocation:', error);
+      .catch((error) => {
+        console.error("Error fetching geolocation:", error);
         setCvUrl(`/assets/docs/cv_southasia/CV_Sreemonta_Bhowmik.pdf`); // Fallback to South Asia
         setIsLoading(false);
       });
   }, []);
 
+  // const handleDownloadClick = () => {
+  //   if (isLoading || !cvUrl) {
+  //     alert('Location detection in progress. Please try again in a moment.');
+  //     return;
+  //   }
+  //   const link = document.createElement("a");
+  //   link.href = cvUrl;
+  //   link.download = cvUrl.includes("CV_") ? "CV_Sreemonta_Bhowmik.pdf" : "Resume_Sreemonta_Bhowmik.pdf";
+  //   link.click();
+  // };
   const handleDownloadClick = () => {
     if (isLoading || !cvUrl) {
-      alert('Location detection in progress. Please try again in a moment.');
+      alert("Location detection in progress. Please try again in a moment.");
       return;
     }
+
     const link = document.createElement("a");
     link.href = cvUrl;
-    link.download = cvUrl.includes("CV_") ? "CV_Sreemonta_Bhowmik.pdf" : "Resume_Sreemonta_Bhowmik.pdf";
+    link.download = cvUrl.includes("CV_")
+      ? "CV_Sreemonta_Bhowmik.pdf"
+      : "Resume_Sreemonta_Bhowmik.pdf";
+
+    document.body.appendChild(link); // important
     link.click();
+    document.body.removeChild(link); // cleanup
   };
 
   const certificateDownload = (fileName) => {
-  const link = document.createElement("a");
-  // This points to your public/docs/certificate/ folder
-  link.href = `/assets/docs/certificate/${fileName}`;
-  link.download = fileName; 
-  link.click();
-};
+    const link = document.createElement("a");
+    // This points to your public/docs/certificate/ folder
+    link.href = `/assets/docs/certificate/${fileName}`;
+    link.download = fileName;
+    link.click();
+  };
   return (
     <div>
       <Grid>
         <Cell col={4}>
-          <div style={{ textAlign: "center" }}>
-            <img src={profilephoto} alt="avatar" style={{ height: "200px" }} />
+          <div
+            style={{
+              textAlign: "center",
+            }}
+          >
+            <img
+              src={profilephoto}
+              alt="avatar"
+              style={{
+                height: "200px",
+              }}
+            />{" "}
           </div>
-
-          <h2 style={{ paddingTop: "2em" }}>Sreemonta Bhowmik</h2>
-          <h4 style={{ color: "grey" }}>
+          <h2
+            style={{
+              paddingTop: "2em",
+            }}
+          >
+            {" "}
+            Sreemonta Bhowmik{" "}
+          </h2>{" "}
+          <h4
+            style={{
+              color: "grey",
+            }}
+          >
             Application Consultant{" "}
-            <span style={{ fontSize: "small" }}>
-              <a href="javascript:void(0)" onClick={handleDownloadClick}>
-                CV/Resume
-              </a>
-            </span>
-          </h4>
-          <hr style={{ borderTop: "3px solid #833fb2", width: "100%" }} />
+            {/* <span style={{ fontSize: "small" }}>
+                    <a href="javascript:void(0)" onClick={handleDownloadClick}>
+                      CV/Resume
+                    </a>
+                  </span> */}{" "}
+            <button
+              onClick={handleDownloadClick}
+              style={{
+                fontSize: "small",
+                background: "none",
+                border: "none",
+                color: "#e22947",
+                cursor: "pointer",
+                textDecoration: "underline",
+                padding: 0,
+                marginLeft: "5px",
+              }}
+            >
+              CV / Resume{" "}
+            </button>{" "}
+          </h4>{" "}
+          <hr
+            style={{
+              borderTop: "3px solid #833fb2",
+              width: "100%",
+            }}
+          />{" "}
           <p>
-          Experienced full-stack software developer with over 12 years in designing, developing, and implementing robust applications and solutions across diverse technologies. Skilled in translating complex requirements into efficient, scalable software and seeking to leverage this expertise in a challenging Full-Stack Software Engineer role.
-          </p>
-          <hr style={{ borderTop: "3px solid #833fb2", width: "100%" }} />
-          <h5>Address</h5>
-          <p>Al Nahada, Sharjah (Dubai-Sharjah border), United Arab Emirates</p>
-          <h5>Phone</h5>
-          <p>(+971) 505518307</p>
-          <h5>Email</h5>
+            Experienced full - stack software developer with over 12 years in
+            designing, developing, and implementing robust applications and
+            solutions across diverse technologies.Skilled in translating complex
+            requirements into efficient, scalable software and seeking to
+            leverage this expertise in a challenging Full - Stack Software
+            Engineer role.{" "}
+          </p>{" "}
+          <hr
+            style={{
+              borderTop: "3px solid #833fb2",
+              width: "100%",
+            }}
+          />{" "}
+          <h5> Address </h5>{" "}
+          <p>
+            {" "}
+            Al Nahada, Sharjah(Dubai - Sharjah border), United Arab
+            Emirates{" "}
+          </p>{" "}
+          <h5> Phone </h5> <p> (+971) 505518307 </p> <h5> Email </h5>{" "}
           <p>
             <a href="mailto:sreemonta.bhowmik@gmail.com">
-              sreemonta.bhowmik@gmail.com
-            </a>
-          </p>
-          <h5>Web</h5>
+              sreemonta.bhowmik @gmail.com{" "}
+            </a>{" "}
+          </p>{" "}
+          <h5> Web </h5>{" "}
           <a
             href="https://sreemonta.netlify.app/"
             target="_blank"
             rel="noreferrer"
           >
-            Personal Profile
-          </a>
-          <hr style={{ borderTop: "3px solid #833fb2", width: "100%" }} />
-        </Cell>
+            Personal Profile{" "}
+          </a>{" "}
+          <hr
+            style={{
+              borderTop: "3px solid #833fb2",
+              width: "100%",
+            }}
+          />{" "}
+        </Cell>{" "}
         <Cell className="resume-right-col" col={8}>
-          <h2>Education</h2>
-
+          <h2> Education </h2>
           <Education
             startMonth="July"
             startYear={2009}
@@ -135,11 +207,24 @@ function Profile() {
             schoolName="West Bengal University of Technology, West Bengal, India"
             schoolDescription="Bachelor of Technology in Computer Science & Engineering"
           />
-
-          <hr style={{ borderTop: "3px solid #e22947" }} />
-
-          <h2>Experience</h2>
-
+          <hr
+            style={{
+              borderTop: "3px solid #e22947",
+            }}
+          />
+          <h2> Experience </h2>
+          <Experience
+            // startMonth="Mar"
+            // startYear={2023}
+            // endMonth=""
+            // endYear="Continue"
+            duration="Dec, 2025 – Present"
+            companyNameAddress="Self-employed (Contract / Remote)"
+            designation="Freelance Full-Stack Developer"
+            jobDescription="Delivering post-deployment support and enhancements for a charity management system within the Dubai Health ecosystem (.NET Core, Angular, SQL Server).|Developing a custom event management platform for a Dhaka-based client: backend REST APIs (.NET Core), Angular frontend, and relational database design.|Providing ad hoc technical consulting — performance fixes, bug resolution, and architecture advisory — across .NET and Angular applications.|Engaging directly with stakeholders for requirements gathering, scope definition, and iterative delivery in a project-based model."
+            toolsTechHeading="Language/Technology used: "
+            toolsTechDesc="C#, .NET Framework 4.5, .NET Core 3.1, .NET 10, .NET Web API, SQL Server 2019, Angular 10 and 19, IIS 8.5, and Azure Repos, Ocelot API Gateway, RDLC Reports, Docker."
+          />
           <Experience
             // startMonth="Mar"
             // startYear={2023}
@@ -152,7 +237,6 @@ function Profile() {
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Framework 4.5, .NET Core 3.1, .NET Web API, SQL Server 2019, Angular 10 and 16, IIS 8.5, and Azure Repos, Ocelot API Gateway, RDLC Reports, Docker."
           />
-
           <Experience
             duration="Sep, 2022 – Feb, 2023"
             companyNameAddress="Blue Logic Digital, Dubai, United Arab Emirates"
@@ -161,7 +245,6 @@ function Profile() {
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Framework 4.5, 4.8, .NET Core, ASP.NET MVC, Web API, SQL Server 2016, Angular 8, Angular 13, IIS 8.5, Azure Repos."
           />
-
           <Experience
             duration="Mar, 2021 – Aug, 2022"
             companyNameAddress="M2SYS Technology (A US-based offshore company), Dhaka, Bangladesh"
@@ -170,7 +253,6 @@ function Profile() {
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Framework 4.5, .NET 5, Ocelot API Gateway, Web API, SQL Server 2016, Angular JS, Angular 13, NGINX, Docker."
           />
-
           <Experience
             duration="Mar, 2020 – Sept, 2020"
             companyNameAddress="LeadSoft Bangladesh Limited, Dhaka, Bangladesh"
@@ -179,7 +261,6 @@ function Profile() {
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Core, Entity Framework Core, In-Memory Cache, SQL Server 2016, Angular 9, Docker, Azure app service, Azure Repos, Github, TFS."
           />
-
           <Experience
             duration="Oct 2015 – Feb 2020"
             companyNameAddress="Raihana Consulting (A US-based offshore company), Dhaka, Bangladesh"
@@ -189,7 +270,6 @@ function Profile() {
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Framework 3.5, 4.5, ASP.NET MVC, .NET Core, Entity Framework Core, In-Memory Cache, SQL Server 2012, Angular 8, IIS, TFS, Crystal Report"
           />
-
           <Experience
             duration="Jul 2014 – Oct 2015"
             companyNameAddress="CSL Software Resources Limited, Dhaka, Bangladesh"
@@ -198,7 +278,6 @@ function Profile() {
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Framework 3.5, 4.5, ASP.NET MVC, .NET Core, Entity Framework Core, In-Memory Cache, SQL Server 2012, IIS, TFS, RDLC, Crystal Report"
           />
-
           <Experience
             duration="Apr 2012 – Jul 2012"
             companyNameAddress="CSL Software Resources Limited, Dhaka, Bangladesh"
@@ -207,7 +286,6 @@ function Profile() {
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Framework, ASP.NET MVC, SQL Server 2012, Infragistics UI,  JQuery, JavaScript, IIS, GitHub, TFS, Crystal Report"
           />
-
           <Experience
             duration="Jun 2010 – Mar 2012"
             companyNameAddress="Raihana Consulting (A US-based offshore company), Dhaka, Bangladesh"
@@ -216,7 +294,6 @@ function Profile() {
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Framework, ASP.NET, ASP.NET MVC, SQL Server, Infragistics UI,  JQuery, JavaScript, IIS, TFS, RDLC, Crystal Report"
           />
-
           <Experience
             duration="Oct 2020 – Feb 2021"
             companyNameAddress="Redeem Tech, Copenhagen, Denmark"
@@ -225,11 +302,12 @@ function Profile() {
             toolsTechHeading="Language/Technology used: "
             toolsTechDesc="C#, .NET Core, Entity Framework Core, Redis Cache, SQL Server 2016, Angular 9, IIS, TFS."
           />
-
-          <hr style={{ borderTop: "3px solid #e22947" }} />
-
-          <h2>Skills</h2>
-
+          <hr
+            style={{
+              borderTop: "3px solid #e22947",
+            }}
+          />
+          <h2> Skills </h2>
           <Skills
             category="Languages"
             skills="C#, TypeScript, JavaScript, VB.NET (legacy support)"
@@ -258,11 +336,7 @@ function Profile() {
             category="Integrations & Security"
             skills="External APIs, UAE Pass, IDAM, OAuth2/OIDC, JWT, SSO"
           />
-          
-          <Skills
-            category="Reporting"
-            skills="Crystal Reports, RDLC, SSRS"
-          />
+          <Skills category="Reporting" skills="Crystal Reports, RDLC, SSRS" />
           <Skills
             category="Project Management & Version Control"
             skills="Jira, Git, GitHub, GitLab"
@@ -271,11 +345,12 @@ function Profile() {
             category="Migration"
             skills=".NET Version & Database Migration"
           />
-
-          <hr style={{ borderTop: "3px solid #e22947" }} />
-
-          <h2>Certifications, Courses & Training</h2>
-
+          <hr
+            style={{
+              borderTop: "3px solid #e22947",
+            }}
+          />
+          <h2> Certifications, Courses & Training </h2>
           <Courses
             category="Microsoft Certification"
             courses="Microsoft Azure Fundamentals (AZ-900) - In Progress"
@@ -283,17 +358,22 @@ function Profile() {
           <Courses
             category="Coursera-Google Certification"
             courses={
-                      <>
-                        Google Prompting Essentials - Start Writing Prompts like a Pro - 
-                        <span 
-                          onClick={() => certificateDownload("writeprompt.pdf")} 
-                          style={{ color: "#e22947", cursor: "pointer", textDecoration: "underline", marginLeft: "5px" }}
-                        >
-                          Completed
-                        </span>
-                      </>
-                    }
-          />
+              <>
+                Google Prompting Essentials - Start Writing Prompts like a Pro -
+                <span
+                  onClick={() => certificateDownload("writeprompt.pdf")}
+                  style={{
+                    color: "#e22947",
+                    cursor: "pointer",
+                    textDecoration: "underline",
+                    marginLeft: "5px",
+                  }}
+                >
+                  Completed{" "}
+                </span>{" "}
+              </>
+            }
+          />{" "}
           <Courses
             category="Coursera-Google Certification"
             courses="Google Prompting Essentials - Design Prompts for Everyday Work Tasks - In Progress"
@@ -326,8 +406,8 @@ function Profile() {
             category="Training"
             courses="Red Hat Certified Technician (Linux) Training — Micro-Pro, West Bengal, India (Jun 2006 – Jul 2006) - Completed"
           />
-        </Cell>
-      </Grid>
+        </Cell>{" "}
+      </Grid>{" "}
     </div>
   );
 }
